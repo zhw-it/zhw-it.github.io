@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>租房信息</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "微软雅黑", sans-serif; }
+        body { background-color: #f5f7fa; padding: 15px; }
+        .header { text-align: center; padding: 20px 0; color: #2c3e50; }
+        .room-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .room-title { font-size: 18px; font-weight: bold; color: #2c3e50; margin-bottom: 8px; }
+        .room-price { font-size: 20px; color: #e74c3c; font-weight: bold; margin-bottom: 8px; }
+        .room-status { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 14px; color: #fff; }
+        .status-empty { background-color: #27ae60; }
+        .status-rented { background-color: #bdc3c7; }
+        .room-info { font-size: 14px; color: #7f8c8d; margin-top: 8px; line-height: 1.6; }
+        .contact { text-align: center; padding: 20px 0; }
+        .contact-btn { display: inline-block; background-color: #3498db; color: #fff; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-size: 18px; font-weight: bold; }
+        .rent-full {
+            text-align: center;
+            font-size: 20px;
+            color: #e74c3c;
+            font-weight: bold;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ====================== 全局统一配置：只改这里！ ====================== -->
+<script>
+    // 🏠 总开关：
+    // false = 正常出租（显示电话、显示可租）
+    // true  = 全部租满（隐藏电话、全部显示已租）
+    const IS_ALL_RENTED = false;
+
+    // 统一地址
+    const HOUSE_ADDRESS = "容县侨山路237号";
+    // 统一配套
+    const HOUSE_FACILITY = "空调、热水器、床";
+    // 统一备注
+    const HOUSE_NOTE = "押一付一，水电自理";
+    // 其它说明
+    const OTHER_INFO = "房东直租，无中介费，随时看房";
+</script>
+<!-- =================================================================== -->
+
+    <div class="header">
+        <h1>🏠 房屋出租信息</h1>
+    </div>
+
+    <!-- 单间配套 380 -->
+    <div class="room-card">
+        <div class="room-title">单间配套</div>
+        <div class="room-price">￥380/月</div>
+        <script>
+            if(IS_ALL_RENTED){
+                document.write('<span class="room-status status-rented">已租</span>');
+            }else{
+                document.write('<span class="room-status status-empty">可租</span>');
+            }
+        </script>
+        <div class="room-info">
+            户型：1室0厅1卫<br>
+            位置：<script>document.write(HOUSE_ADDRESS)</script><br>
+            配套：<script>document.write(HOUSE_FACILITY)</script><br>
+            备注：<script>document.write(HOUSE_NOTE)</script><br>
+            其它说明：<script>document.write(OTHER_INFO)</script>
+        </div>
+    </div>
+
+    <!-- 一房一厅 550 -->
+    <div class="room-card">
+        <div class="room-title">一房一厅</div>
+        <div class="room-price">￥550/月</div>
+        <script>
+            if(IS_ALL_RENTED){
+                document.write('<span class="room-status status-rented">已租</span>');
+            }else{
+                document.write('<span class="room-status status-empty">可租</span>');
+            }
+        </script>
+        <div class="room-info">
+            户型：1室1厅1卫<br>
+            楼层：3楼<br>
+            位置：<script>document.write(HOUSE_ADDRESS)</script><br>
+            配套：<script>document.write(HOUSE_FACILITY)</script><br>
+            备注：<script>document.write(HOUSE_NOTE)</script><br>
+            其它说明：<script>document.write(OTHER_INFO)</script>
+        </div>
+    </div>
+
+    <!-- 两房一厅 700 -->
+    <div class="room-card">
+        <div class="room-title">两房一厅</div>
+        <div class="room-price">￥700/月</div>
+        <script>
+            if(IS_ALL_RENTED){
+                document.write('<span class="room-status status-rented">已租</span>');
+            }else{
+                document.write('<span class="room-status status-empty">可租</span>');
+            }
+        </script>
+        <div class="room-info">
+            户型：2室1厅1卫<br>
+            楼层：3楼<br>
+            位置：<script>document.write(HOUSE_ADDRESS)</script><br>
+            配套：<script>document.write(HOUSE_FACILITY)</script><br>
+            备注：<script>document.write(HOUSE_NOTE)</script><br>
+            其它说明：<script>document.write(OTHER_INFO)</script>
+        </div>
+    </div>
+
+    <!-- 三房一厅 900 -->
+    <div class="room-card">
+        <div class="room-title">三房一厅</div>
+        <div class="room-price">￥900/月</div>
+        <script>
+            if(IS_ALL_RENTED){
+                document.write('<span class="room-status status-rented">已租</span>');
+            }else{
+                document.write('<span class="room-status status-empty">可租</span>');
+            }
+        </script>
+        <div class="room-info">
+            户型：3室1厅1卫<br>
+            楼层：3楼<br>
+            位置：<script>document.write(HOUSE_ADDRESS)</script><br>
+            配套：<script>document.write(HOUSE_FACILITY)</script><br>
+            备注：<script>document.write(HOUSE_NOTE)</script><br>
+            其它说明：<script>document.write(OTHER_INFO)</script>
+        </div>
+    </div>
+
+    <!-- 四房一厅 1200 -->
+    <div class="room-card">
+        <div class="room-title">四房一厅</div>
+        <div class="room-price">￥1200/月</div>
+        <script>
+            if(IS_ALL_RENTED){
+                document.write('<span class="room-status status-rented">已租</span>');
+            }else{
+                document.write('<span class="room-status status-empty">可租</span>');
+            }
+        </script>
+        <div class="room-info">
+            户型：4室1厅1卫<br>
+            楼层：3楼<br>
+            位置：<script>document.write(HOUSE_ADDRESS)</script><br>
+            配套：<script>document.write(HOUSE_FACILITY)</script><br>
+            备注：<script>document.write(HOUSE_NOTE)</script><br>
+            其它说明：<script>document.write(OTHER_INFO)</script>
+        </div>
+    </div>
+
+    <!-- 租满提示 + 电话开关 -->
+    <script>
+        if(IS_ALL_RENTED){
+            document.write('<div class="rent-full">⚠️ 已租满，暂不出租</div>');
+        }else{
+            document.write('<div class="contact"><a href="tel:13249459910" class="contact-btn">📞 立即联系房东</a></div>');
+        }
+    </script>
+
+</body>
+</html>
